@@ -5,11 +5,11 @@ export const config = {
 };
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
-  const timeoutID = globalThis.setTimeout(() => {
-    globalThis.console.log('timeout');
+  const timeoutID = setTimeout(() => {
+    console.log('timeout');
   }, 1000);
 
-  globalThis.clearTimeout(timeoutID);
+  clearTimeout(timeoutID);
 
   return NextResponse.next();
 }
